@@ -1,0 +1,39 @@
+﻿@page
+@model REPORTS.Pages.Clients.IndexModel
+
+<h2>List Of Regions</h2>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>RegionID</th>
+            <th>RegionCode</th>
+            <th>Region</th>
+            <th>Country</th>
+            <th>Manager</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model?.ListClintns != null && Model.ListClintns.Any())
+        {
+            foreach (var item in Model.ListClintns)
+            {
+                <tr>
+                    <td>@item.RegionID</td>
+                    <td>@item.RegionCode</td>
+                    <td>@item.Region</td>
+                    <td>@item.CountryCode</td>
+                    <td>@item.Manager</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="5" style="color:red;text-align:center">
+                    No data found
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
